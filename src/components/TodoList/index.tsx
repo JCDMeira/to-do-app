@@ -9,11 +9,26 @@ const TodoList: React.FC = () => {
   ];
 
   return (
-    <div>
-      {todos.map((todo, index) => {
-        return <h2 key={index}>{todo.title}</h2>;
-      })}
-    </div>
+    <table className="uk-table">
+      <caption>Lista de tarefas</caption>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tarefa</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {todos?.map((todo, index) => {
+          return (
+            <tr key={index}>
+              <th>{todo.id}</th>
+              <th>{todo.title}</th>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 };
 
