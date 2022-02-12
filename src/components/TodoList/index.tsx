@@ -1,11 +1,13 @@
 import React from 'react';
 import { Todo } from '../../models/Todo';
+import TodoListIten from '../TodoListIten';
 
 const TodoList: React.FC = () => {
   const todos: Todo[] = [
     { id: 1, title: 'ir ao supermercado', done: false },
     { id: 2, title: 'ir para academia', done: false },
     { id: 3, title: 'ir para TGP', done: false },
+    { id: 4, title: 'Terminar aulas do balta', done: false },
   ];
 
   return (
@@ -20,12 +22,7 @@ const TodoList: React.FC = () => {
       </thead>
       <tbody>
         {todos?.map((todo, index) => {
-          return (
-            <tr key={index}>
-              <th>{todo.id}</th>
-              <th>{todo.title}</th>
-            </tr>
-          );
+          return <TodoListIten key={index} todo={todo} />;
         })}
       </tbody>
     </table>
