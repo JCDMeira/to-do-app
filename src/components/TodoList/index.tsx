@@ -3,12 +3,7 @@ import { Todo } from '../../models/Todo';
 import TodoListIten from '../TodoListIten';
 
 const TodoList: React.FC = () => {
-  const todos: Todo[] = [
-    { id: 1, title: 'ir ao supermercado', done: false },
-    { id: 2, title: 'ir para academia', done: false },
-    { id: 3, title: 'ir para TGP', done: false },
-    { id: 4, title: 'Terminar aulas do balta', done: false },
-  ];
+  const todos: Todo[] = [];
 
   return (
     <table className="uk-table">
