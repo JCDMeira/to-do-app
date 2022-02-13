@@ -1,4 +1,5 @@
 import React from 'react';
+import TodoConsumer from '../../contexts/TodoContext';
 import { Todo } from '../../models/Todo';
 
 interface Props {
@@ -6,6 +7,8 @@ interface Props {
 }
 
 const TodoListIten: React.FC<Props> = ({ todo }: Props) => {
+  const { removeTodo, toggle } = TodoConsumer();
+
   const handleChange = () => {
     console.log('mudou');
   };

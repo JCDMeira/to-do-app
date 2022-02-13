@@ -1,17 +1,16 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import React, { createContext } from 'react';
-import { JsxElement } from 'typescript';
+import React, { createContext, useContext } from 'react';
 import { Todo } from '../models/Todo';
 import { TodoContextType } from './TodoContextType';
 
-export const TodoContext = createContext<TodoContextType>({
+const TodoContext = createContext<TodoContextType>({
   todos: [],
   addTodo: () => {},
   removeTodo: () => {},
   toggle: () => {},
 });
 
-const TodoProvider = ({ children }: JsxElement) => {
+const TodoProvider: React.FC = ({ children }) => {
   const todos: Todo[] = [
     { id: 1, title: 'ir ao supermercado', done: false },
     { id: 2, title: 'ir para academia', done: false },
@@ -38,4 +37,8 @@ const TodoProvider = ({ children }: JsxElement) => {
   );
 };
 
-export default TodoProvider;
+const TodoConsumer = (): TodoContextType => useContext(TodoContext);
+
+export { TodoContext, TodoProvider };
+
+export default TodoConsumer;

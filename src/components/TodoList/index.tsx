@@ -1,9 +1,9 @@
 import React from 'react';
-import { Todo } from '../../models/Todo';
+import TodoConsumer from '../../contexts/TodoContext';
 import TodoListIten from '../TodoListIten';
 
 const TodoList: React.FC = () => {
-  const todos: Todo[] = [];
+  const { todos } = TodoConsumer();
 
   return (
     <table className="uk-table">
