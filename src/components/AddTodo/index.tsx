@@ -21,15 +21,16 @@ const AddTodo: React.FC = () => {
   });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = (data: any, e: any) => {
     addTodo(data.title);
-    // e.target.reset();
+    e.target.reset();
     window.location.href = '/';
   };
 
   return (
-    <form onSubmit={handleSubmit<TodoContextType>((data) => onSubmit(data))}>
+    <form
+      onSubmit={handleSubmit<TodoContextType>((data, e) => onSubmit(data, e))}
+    >
       <h4>Nova tarefa</h4>
       <div className="uk-margin uk-width-1-1">
         <input
