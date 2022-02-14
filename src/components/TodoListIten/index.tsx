@@ -10,11 +10,11 @@ const TodoListIten: React.FC<Props> = ({ todo }: Props) => {
   const { removeTodo, toggle } = TodoConsumer();
 
   const handleChange = () => {
-    console.log('mudou');
+    toggle(todo);
   };
 
   const handleDelete = (todo: Todo) => {
-    console.log(todo);
+    removeTodo(todo);
   };
 
   return (

@@ -25,7 +25,8 @@ const TodoProvider: React.FC = ({ children }) => {
 
   const removeTodo = (todo: Todo) => {
     const index = todos.indexOf(todo);
-    setTodos(todos.filter((a, i) => i !== index));
+    const result = todos.filter((a, i) => i !== index);
+    setTodos(result);
   };
 
   const toggle = (todo: Todo) => {
