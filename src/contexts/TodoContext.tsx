@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Todo } from '../models/Todo';
 import { TodoContextType } from './TodoContextType';
-import { get } from '../services/TodoService';
+import { get, save } from '../services/TodoService';
 
 const TodoContext = createContext<TodoContextType>({
   todos: [],
@@ -13,6 +13,10 @@ const TodoContext = createContext<TodoContextType>({
 
 const TodoProvider: React.FC = ({ children }) => {
   const [todos, setTodos] = useState<Todo[]>(get);
+
+  useEffect(() => {
+    save(todos);
+  }, [todos]);
 
   const addTodo = (title: string) => {
     const todo: Todo = { id: todos.length + 1, title, done: false };
