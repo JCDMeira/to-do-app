@@ -1,6 +1,6 @@
 import { Todo } from '../models/Todo';
 
-const TODO_STORE = 'todos';
+const TODO_STORE = 'myTodos';
 
 export const get = (): Todo[] => {
   const data = localStorage.getItem(TODO_STORE) || '';
