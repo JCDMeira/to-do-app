@@ -1,4 +1,7 @@
 <p align="center">
+  <image height="20px"
+  src="https://img.shields.io/github/repo-size/JCDMeira/to-do-app?style=for-the-badge"
+  />
   <image
   src="https://img.shields.io/github/languages/count/JCDMeira/to-do-app"
   />
@@ -41,7 +44,6 @@ Criar uma aplicação com React e TypeScrip para permitir o gerenciamento de to-
 
 # :camera_flash: Screenshots <a name="id02"></a>
 
-<!--
 <br />
 
 ## :iphone: Mobile design
@@ -62,7 +64,7 @@ Criar uma aplicação com React e TypeScrip para permitir o gerenciamento de to-
 
 <p  align="center"><img width="1080px" src="./presentation/myWork.gif" align="center"></img></p>
 
-<br /> -->
+<br />
 
 # :heavy_check_mark: Links <a name="id03"></a>
 
