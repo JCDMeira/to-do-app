@@ -70,7 +70,7 @@ Criar uma aplicação com React e TypeScrip para permitir o gerenciamento de to-
 
 <br />
 
-<!-- - Live Site URL: [check the result]() -->
+- Live Site URL: [check the result](https://jcdmeira-to-do.netlify.app)
 
 <br />
 
@@ -78,6 +78,8 @@ Criar uma aplicação com React e TypeScrip para permitir o gerenciamento de to-
 
 - [Tutorial de react](https://pt-br.reactjs.org/tutorial/tutorial.html)
 - [Conversor de unidades CSS - px para VH/VW/REM](https://it-news.pw/pxtovh/)
+- [upgrading react-router-dom](https://reactrouter.com/docs/en/v6/upgrading/v5)
+- [useForm](https://react-hook-form.com/api/useform)
 
 # 🛠 Feito com <a name="id04"></a>
 
