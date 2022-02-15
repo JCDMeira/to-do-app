@@ -88,6 +88,57 @@ Criar uma aplicação com React e TypeScrip para permitir o gerenciamento de to-
 
 ## O que eu aprendi <a name="id04.1"></a>
 
+Aprendi um pouco mais sobre desacoplamento e como é possível dividir e separar certas responsabilidades em um arquivo a parte. Para se necessário fazer alterações é possível fazer apenas no arquivo em questão.
+
+Como no exemplo a seguir, em que todo o acesso ao localStorage fica consentrado em TodoService.tsx na pasta services.
+
+```tsx
+import { Todo } from '../models/Todo';
+
+const TODO_STORE = 'myTodos';
+
+export const get = (): Todo[] => {
+  const data = localStorage.getItem(TODO_STORE) || '';
+  try {
+    const result = JSON.parse(data) as Todo[];
+    return result;
+  } catch {
+    return [];
+  }
+};
+
+export const save = (data: Todo[]) => {
+  if (data?.length >= 1) {
+    localStorage.setItem(TODO_STORE, JSON.stringify(data));
+  }
+  if (data?.length === 0) {
+    localStorage.setItem(TODO_STORE, '');
+  }
+};
+```
+
+Outro exemplo é isolar a tipagem usada em context em um arquivo a parte, sendo construida como uma interface em um arquivo isolado.
+
+```tsx
+/* eslint-disable no-unused-vars */
+import { Todo } from '../models/Todo';
+
+export interface TodoContextType {
+  todos: Todo[];
+  addTodo(title: string): void;
+  removeTodo(todo: Todo): void;
+  toggle(todo: Todo): void;
+}
+```
+
+O mesmo foi feito com o Todo citado acima como "todo: Todo[]", onde Todo é uma classe isolada como um arquivo dentro de models.
+
+```tsx
+export class Todo {
+  constructor(public id: number, public title: string, public done: boolean) {}
+}
+```
+
 # ☑️ Pré-requisitos <a name="id05"></a>
 
 <br />
